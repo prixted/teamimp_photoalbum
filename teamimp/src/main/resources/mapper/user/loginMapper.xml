@@ -15,7 +15,7 @@
 		       USER_TYPE_CD,
 		       USER_STAT_CD,
 		       PASSWORD_ERR_CNT
-		  FROM pizza.USER_BASE
+		  FROM teamimp.USER_BASE
 		 WHERE EMAIL_ADDR = #{emailAddr}
 		   AND USE_YN = 'Y'
     </select>
