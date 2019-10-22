@@ -14,7 +14,7 @@
 		       FIRST_CREATE_USER_ID,
 		       LAST_MOD_DATETIME,
 		       LAST_MOD_USER_ID
-		  FROM pizza.COM_CLASS_CODE
+		  FROM teamimp.COM_CLASS_CODE
 	    WHERE DELETE_YN = 'N'
     </select>
     
@@ -27,7 +27,7 @@
 		       FIRST_CREATE_USER_ID,
 		       LAST_MOD_DATETIME,
 		       LAST_MOD_USER_ID
-		  FROM pizza.COM_CLASS_CODE
+		  FROM teamimp.COM_CLASS_CODE
 	    WHERE CLASS_CODE_NAME = #{classCodeName}
 	    
     </select>
@@ -35,13 +35,13 @@
     <select id="selectListClassCodeCount" parameterType="com.pizza.common.code.vo.ClassCodeVO" resultType="com.pizza.common.code.vo.ClassCodeVO">
         SELECT /*CodeMapper.selectListClassCodeCount*/
         	   count(*) as total
-		  FROM pizza.COM_CLASS_CODE
+		  FROM teamimp.COM_CLASS_CODE
 		  WHERE DELETE_YN = 'N'
     </select>
     
     <insert id="insertClassCode" parameterType="com.pizza.common.code.vo.ClassCodeVO">
 		INSERT INTO /*CodeMapper.insertClassCode*/
-			pizza.COM_CLASS_CODE(
+			teamimp.COM_CLASS_CODE(
 		   CLASS_CODE_NAME
 		  ,DESCRIPTION
 		  ,DELETE_YN

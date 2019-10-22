@@ -22,7 +22,7 @@
     
      <insert id="insertLoginHistory" parameterType="com.pizza.common.user.vo.LoginVO">
 		INSERT INTO /*insertLoginHistory*/
-					 pizza.LOGIN_HISTORY
+					 teamimp.LOGIN_HISTORY
 		(
 		 USER_ID, 
 		 LOGIN_TIMESTAMP, 

@@ -18,14 +18,14 @@
 		       USER_TYPE_CD,
 		       USER_STAT_CD,
 		       PASSWORD_ERR_CNT
-		  FROM pizza.USER_BASE
+		  FROM teamimp.USER_BASE
 		 WHERE 1=1
 		   AND USER_ID = #{userId}
     </select>
     
     <select id="removeUser" resultType="com.pizza.common.user.vo.UserVO">
         DELETE /*selectOneUser*/
-          FROM pizza.USER_BASE
+          FROM teamimp.USER_BASE
          WHERE 1=1
 		   AND USER_ID = #{userId}
     </select>    
@@ -33,7 +33,7 @@
     
     
     <select id="updateUser" resultType="com.pizza.common.user.vo.UserVO">
-		UPDATE pizza.USER_BASE
+		UPDATE teamimp.USER_BASE
 		   SET EMAIL_ADDR = #{emailAddr},
 		       USER_NAME = #{userName},
 		       PASSWORD = #{password},
@@ -46,7 +46,7 @@
    
     
     <select id="insertUser" resultType="com.pizza.common.user.vo.UserVO">
-   INSERT INTO pizza.USER_BASE 
+   INSERT INTO teamimp.USER_BASE 
     			   (EMAIL_ADDR,USER_NAME,PASSWORD,USER_TYPE_CD,USER_STAT_CD,PASSWORD_ERR_CNT,USE_YN) 
     		VALUES (#{emailAddr},#{userName},#{password},#{userTypeCd},#{userStatCd},#{passwordErrCnt},'Y');	   
     </select>       
@@ -64,7 +64,7 @@
 		       USER_STAT_CD,
 		       PASSWORD_ERR_CNT,
 		       USE_YN
-		  FROM pizza.USER_BASE
+		  FROM teamimp.USER_BASE
 		 WHERE USE_YN = 'Y'
             <if test="userStatCd != null">
        			AND USER_STAT_CD = #{userStatCd}
@@ -77,7 +77,7 @@
     <select id="selectUserListCount" parameterType="com.pizza.common.user.vo.UserVO" resultType="com.pizza.common.user.vo.UserVO">
         SELECT /*userListMapper.selectUserList*/
         	   count(*) as total
-		  FROM pizza.USER_BASE
+		  FROM teamimp.USER_BASE
 		 WHERE USE_YN = 'Y'
             <if test="userStatCd != null">
        			AND USER_STAT_CD = #{userStatCd}

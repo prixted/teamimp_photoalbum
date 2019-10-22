@@ -60,7 +60,7 @@ public class LoginController {
     @RequestMapping(value="/login.go", method=RequestMethod.POST)
     private ModelAndView doLogin(@ModelAttribute LoginVO loginVO, BindingResult result, HttpSession session,
 			RedirectAttributes redirect, HttpServletRequest request, HttpServletResponse response) throws Exception {
-    	System.out.println("11111111111111111111111");
+    	System.out.println("로그인 컨트롤러 호출");
     	/*
     	 * 로그인 처리 SVC 호출
     	 * */
