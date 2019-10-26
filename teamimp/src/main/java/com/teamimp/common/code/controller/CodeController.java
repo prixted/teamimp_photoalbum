@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.teamimp.common.code.svc.CodeSvc;
 import com.teamimp.common.code.vo.ClassCodeVO;
 import com.teamimp.common.user.vo.UserVO;
-import com.teamimp.common.util.PizzaSessionUtil;
+import com.teamimp.common.util.TeamimpSessionUtil;
 import com.teamimp.common.vo.RestResponseVO;
 
 @RestController
@@ -65,7 +65,7 @@ public class CodeController {
     	/*
     	 * 2.로그인 사용자 조회 - setFirstCreateUserId, setLastModUserId
     	 * */
-    	UserVO loginUser = PizzaSessionUtil.getLoginUser(request);
+    	UserVO loginUser = TeamimpSessionUtil.getLoginUser(request);
     	classCodeVO.setFirstCreateUserId(loginUser.getUserId());
     	classCodeVO.setLastModUserId(loginUser.getUserId());
 

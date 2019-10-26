@@ -1,4 +1,4 @@
-package com.leafCat;
+package com.harang;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LcmgrApplicationTests {
+public class HarangApplicationTests {
 
 	@Test
 	public void contextLoads() {

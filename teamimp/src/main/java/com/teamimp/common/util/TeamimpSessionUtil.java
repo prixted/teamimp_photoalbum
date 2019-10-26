@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import com.teamimp.common.user.vo.UserVO;
 
-public class PizzaSessionUtil {
+public class TeamimpSessionUtil {
 	
 	public static UserVO getLoginUser(HttpServletRequest request){
 		HttpSession session = request.getSession();
