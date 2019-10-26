@@ -3,13 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.pizza.common.user.mapper.UserListMapper">
+<mapper namespace="com.teamimp.common.user.mapper.UserListMapper">
 
     <select id="getNow" resultType="java.lang.String">
         SELECT NOW()
     </select>
     
-    <select id="selectOneUser" resultType="com.pizza.common.user.vo.UserVO">
+    <select id="selectOneUser" resultType="com.teamimp.common.user.vo.UserVO">
         SELECT /*selectOneUser*/
         	   USER_ID,
 		       EMAIL_ADDR,
@@ -23,7 +23,7 @@
 		   AND USER_ID = #{userId}
     </select>
     
-    <select id="removeUser" resultType="com.pizza.common.user.vo.UserVO">
+    <select id="removeUser" resultType="com.teamimp.common.user.vo.UserVO">
         DELETE /*selectOneUser*/
           FROM teamimp.USER_BASE
          WHERE 1=1
@@ -32,7 +32,7 @@
     
     
     
-    <select id="updateUser" resultType="com.pizza.common.user.vo.UserVO">
+    <select id="updateUser" resultType="com.teamimp.common.user.vo.UserVO">
 		UPDATE teamimp.USER_BASE
 		   SET EMAIL_ADDR = #{emailAddr},
 		       USER_NAME = #{userName},
@@ -45,7 +45,7 @@
     </select>    
    
     
-    <select id="insertUser" resultType="com.pizza.common.user.vo.UserVO">
+    <select id="insertUser" resultType="com.teamimp.common.user.vo.UserVO">
    INSERT INTO teamimp.USER_BASE 
     			   (EMAIL_ADDR,USER_NAME,PASSWORD,USER_TYPE_CD,USER_STAT_CD,PASSWORD_ERR_CNT,USE_YN) 
     		VALUES (#{emailAddr},#{userName},#{password},#{userTypeCd},#{userStatCd},#{passwordErrCnt},'Y');	   
@@ -55,7 +55,7 @@
     
     
     
-    <select id="selectUserList" parameterType="com.pizza.common.user.vo.UserVO" resultType="com.pizza.common.user.vo.UserVO">
+    <select id="selectUserList" parameterType="com.teamimp.common.user.vo.UserVO" resultType="com.teamimp.common.user.vo.UserVO">
         SELECT /*userListMapper.selectUserList*/
         	   USER_ID,
 		       EMAIL_ADDR,
@@ -74,7 +74,7 @@
 
 
 
-    <select id="selectUserListCount" parameterType="com.pizza.common.user.vo.UserVO" resultType="com.pizza.common.user.vo.UserVO">
+    <select id="selectUserListCount" parameterType="com.teamimp.common.user.vo.UserVO" resultType="com.teamimp.common.user.vo.UserVO">
         SELECT /*userListMapper.selectUserList*/
         	   count(*) as total
 		  FROM teamimp.USER_BASE

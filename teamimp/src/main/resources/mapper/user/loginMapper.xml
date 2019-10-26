@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.pizza.common.user.mapper.LoginMapper">
+<mapper namespace="com.teamimp.common.user.mapper.LoginMapper">
     
-     <select id="selectOneUserForLogin" resultType="com.pizza.common.user.vo.UserVO" 
-        			parameterType="com.pizza.common.user.vo.LoginVO">
+     <select id="selectOneUserForLogin" resultType="com.teamimp.common.user.vo.UserVO" 
+        			parameterType="com.teamimp.common.user.vo.LoginVO">
         SELECT /*selectOneUser*/
         	   USER_ID,
 		       EMAIL_ADDR,
@@ -20,7 +20,7 @@
 		   AND USE_YN = 'Y'
     </select>
     
-     <insert id="insertLoginHistory" parameterType="com.pizza.common.user.vo.LoginVO">
+     <insert id="insertLoginHistory" parameterType="com.teamimp.common.user.vo.LoginVO">
 		INSERT INTO /*insertLoginHistory*/
 					 teamimp.LOGIN_HISTORY
 		(
